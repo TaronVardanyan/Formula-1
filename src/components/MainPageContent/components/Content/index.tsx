@@ -14,7 +14,11 @@ const Content = () => {
   return (
     <ContentWrapper xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
       <Seasons selectedSeason={season} setSelected={handleSetSeason} />
-      <RankingTables selectedSeason={season} isDriverRanking={isDriverRanking} />
+      <RankingTables
+        selectedSeason={season}
+        isDriverRanking={isDriverRanking}
+        setRankingState={setRankingState}
+      />
     </ContentWrapper>
   );
 };

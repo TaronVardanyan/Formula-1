@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const SeasonsWrapper = styled.div`
   width: 100%;
@@ -27,7 +28,7 @@ export const SeasonsList = styled.ul`
   justify-content: flex-start;
 `;
 
-export const SeasonsListItem = styled.li`
+export const SeasonsListItem = styled(motion.li)`
   display: flex;
   align-items: center;
   justify-content: center;

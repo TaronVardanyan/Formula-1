@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { headers } from '../../../../../../headers';
+import { AnimatePresence } from 'framer-motion';
+import { message } from 'antd';
 import { SeasonsWrapper, SeasonsList, SeasonsListItem, SeasonsTitle } from './styles';
 
 interface Props {
@@ -12,10 +15,7 @@ const Seasons = ({ selectedSeason, setSelected }: Props) => {
   const options = {
     method: 'GET',
     url: 'https://api-formula-1.p.rapidapi.com/seasons',
-    headers: {
-      'X-RapidAPI-Key': 'dbea243470msh4d5985740ff1426p18ca4ejsnb3333337d54d',
-      'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com'
-    }
+    headers
   };
 
   useEffect(() => {
@@ -28,8 +28,9 @@ const Seasons = ({ selectedSeason, setSelected }: Props) => {
             setSeasons(response.data.response);
           }
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
+        message.error(error.message);
       }
     }
     getSeasons();
@@ -46,15 +47,20 @@ const Seasons = ({ selectedSeason, setSelected }: Props) => {
     <SeasonsWrapper>
       <SeasonsTitle>Seasons</SeasonsTitle>
       <SeasonsList>
-        {seasons?.map((season, index) => (
-          <SeasonsListItem
-            className={`${season === selectedSeason ? 'active' : ''}`}
-            key={index}
-            onClick={() => handleDataBySeasons(season)}
-          >
-            {season}
-          </SeasonsListItem>
-        ))}
+        <AnimatePresence>
+          {seasons?.map((season, index) => (
+            <SeasonsListItem
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 50 }}
+              transition={{ duration: 0.3 }}
+              className={`${season === selectedSeason ? 'active' : ''}`}
+              key={index}
+              onClick={() => handleDataBySeasons(season)}>
+              {season}
+            </SeasonsListItem>
+          ))}
+        </AnimatePresence>
       </SeasonsList>
     </SeasonsWrapper>
   );

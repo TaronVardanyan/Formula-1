@@ -5,7 +5,7 @@ export const RankingTablesWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 `;
 
@@ -17,6 +17,17 @@ export const RankingTitle = styled.h3`
   margin-bottom: 3.125rem;
 `;
 
+export const HeadingAction = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const RankingTable = styled(Table)`
   width: 100%;
+`;
+
+export const Img = styled.img`
+  width: 5rem;
 `;
