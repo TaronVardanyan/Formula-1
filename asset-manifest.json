@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Formula-1/static/css/main.e8e9d22b.css",
-    "main.js": "/Formula-1/static/js/main.61893ad3.js",
+    "main.js": "/Formula-1/static/js/main.f63702b0.js",
     "index.html": "/Formula-1/index.html",
     "main.e8e9d22b.css.map": "/Formula-1/static/css/main.e8e9d22b.css.map",
-    "main.61893ad3.js.map": "/Formula-1/static/js/main.61893ad3.js.map"
+    "main.f63702b0.js.map": "/Formula-1/static/js/main.f63702b0.js.map"
   },
   "entrypoints": [
     "static/css/main.e8e9d22b.css",
-    "static/js/main.61893ad3.js"
+    "static/js/main.f63702b0.js"
   ]
 }
