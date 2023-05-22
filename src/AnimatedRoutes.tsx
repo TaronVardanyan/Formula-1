@@ -6,7 +6,7 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence>
       <Routes>
-        <Route caseSensitive path="/" element={<Main />} />
+        <Route caseSensitive path="/Formula-1" element={<Main />} />
       </Routes>
     </AnimatePresence>
   );
