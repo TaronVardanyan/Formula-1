@@ -1,7 +1,7 @@
 import { ImageWrapper } from './styles';
 
 const ImageSection = () => {
-  return <ImageWrapper>Image</ImageWrapper>;
+  return <ImageWrapper></ImageWrapper>;
 };
 
 export default ImageSection;
